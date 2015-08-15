@@ -18,9 +18,10 @@ Query.options =  {
 
 
 // Load Data & Parse
-Query.Twirl = function(data_path, resource, callback) {
+Query.Twirl = function(data_path, resource, args, callback) {
 
-  console.log('Twirl CSV resource: ' + data_path + '/' + resource.path);
+  console.log('Twirl CSV resource: ' + data_path + '/' + resource.path + ' with args: ');
+  console.log(args);
 
   Query.Recipe.readManuscript(data_path + '/' + resource.path)
     .then(function(buffer) {
@@ -38,14 +39,10 @@ Query.Twirl = function(data_path, resource, callback) {
         }
 
         _.each(csv_object, function(csv_line, key) {
-
-          // NOTE: Used to then do filtering here for performance reasons
-          // Will be moved elsewhere, but should be benchmarked
-          // Might want to put it back here to spare overhead of 2x loops
-          // Query.magickData(data, resource.schema, Query.options.date);
-
-          csv_to_json.push(_.object(fields, csv_line));
-
+          var json_line = _.object(fields, csv_line);
+          if (Query.Filter(resource.schema, args, json_line)) {
+            csv_to_json.push(json_line);
+          }
         });
 
         return callback(csv_to_json);
