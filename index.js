@@ -30,6 +30,9 @@ Query.Twirl = function(data_path, resource, args, callback) {
       var csv_to_json = [];
       var fields      = _.pluck(resource.schema.fields, 'name');
 
+      // Sanitize Args
+      var allowed_args= _.union(fields, ['search']);
+
       // Turn CSV Data into array, then map + add to output
       csv.parse(csv_data, function(err, csv_object) {
 
@@ -40,7 +43,8 @@ Query.Twirl = function(data_path, resource, args, callback) {
 
         _.each(csv_object, function(csv_line, key) {
           var json_line = _.object(fields, csv_line);
-          if (Query.Filter(resource.schema, args, json_line)) {
+
+          if (Query.Filter(resource.schema, allowed_args, args, json_line)) {
             csv_to_json.push(json_line);
           }
         });
