@@ -1,6 +1,8 @@
 DataPackage Query
 =================
 
+[![NPM](https://nodei.co/npm/datapackage-query.png)](https://nodei.co/npm/datapackage-query/)
+
 Opens `datapackage.json` and contained `resource.csv` files and performs various search queries on the contents.
 
 ```
