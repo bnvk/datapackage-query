@@ -11,16 +11,13 @@
     "url": "https://github.com/bnvk/datapackage-query"
   },
   "keywords": [
-    "open",
-    "knowledge",
-    "open",
+    "open knowledge",
     "data",
-    "frictionless",
-    "data",
-    "data",
-    "package",
+    "open data",
+    "frictionless data",
+    "datapackage",
     "query",
-    "parser"
+    "parse"
   ],
   "author": {
     "name": "Brennan Novak"
