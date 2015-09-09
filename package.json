@@ -1,6 +1,6 @@
 {
   "name": "datapackage-query",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Opens datapackage.json and resource.csv files and performs simple queries on the contents",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bnvk/datapackage-query.git"
+    "url": "https://github.com/bnvk/datapackage-query"
   },
   "keywords": [
     "open",
@@ -35,14 +35,5 @@
   },
   "bugs": {
     "url": "https://github.com/bnvk/datapackage-query/issues"
-  },
-  "homepage": "https://github.com/bnvk/datapackage-query#readme",
-  "readme": "# datapackage-query\nOpen datapackage.json and resource.csv files and query the contents\n",
-  "readmeFilename": "README.md",
-  "_id": "datapackage-query@0.1.0",
-  "dist": {
-    "shasum": "3852d56807c1a477d31f8d7190f5d54a12f3fc31"
-  },
-  "_from": "datapackage-query@^0.1.0",
-  "_resolved": "https://registry.npmjs.org/datapackage-query/-/datapackage-query-0.1.0.tgz"
+  }
 }
